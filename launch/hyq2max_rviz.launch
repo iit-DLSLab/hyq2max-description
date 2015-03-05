@@ -1,0 +1,28 @@
+<launch>
+
+	<!-- send hyq urdf to param server and spawn it -->
+	<include file="$(find hyq2max_description)/launch/upload_hyq2max.launch"/>
+
+	<arg name="gui" default="True"/>
+	<arg name="rviz_conf" default="$(find hyq2max_description)/rviz/hyq2max_model_tf.rviz"/>
+	
+
+	<!-- publish the joint and robot states -->
+	<group if="$(arg gui)">
+		<node name="joint_state_publisher" pkg="joint_state_publisher"
+			type="joint_state_publisher" respawn="true" />
+			<param name="use_gui" value="$(arg gui)"/>
+			<param name="rate" value="200"/>
+	</group>
+
+	<node name="robot_state_publisher" pkg="robot_state_publisher"
+		type="state_publisher" respawn="true">
+		<param name="publish_frequency" value="200" />
+		<param name="rate" value="200" />
+	</node>
+
+	<!-- run rviz -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_conf) -f trunk" respawn="true"/>
+
+</launch>
+

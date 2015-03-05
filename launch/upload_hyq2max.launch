@@ -1,0 +1,13 @@
+<launch>
+
+	<arg name="arm" default="false"/>
+
+	<!-- send HyQ2Max urdf to param server -->
+	<group if="$(arg arm)">
+		<param name="robot_description" command="$(find xacro)/xacro.py '$(find hyq2max_description)/robots/hyq2max_with_arms.urdf.xacro'"/>
+	</group>
+	<group unless="$(arg arm)">
+		<param name="robot_description" command="$(find xacro)/xacro.py '$(find hy2max_description)/robots/hyq2max.urdf.xacro'"/>
+	</group>
+
+</launch>

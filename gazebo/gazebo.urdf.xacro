@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+	<gazebo>
+		<plugin name="gazebo_ros_controller_manager" filename="libgazebo_ros_control.so">
+			<robotNamespace>/hyq2max</robotNamespace>
+			<controlPeriod>0.001</controlPeriod>
+		</plugin>
+
+		<plugin filename="libgazebo_ros_p3d.so" name="gazebo_ros_p3d">
+		 	<bodyName>base_link</bodyName>
+			<topicName>ground_truth_odom</topicName>
+			<alwaysOn>true</alwaysOn>
+			<updateRate>200.0</updateRate>
+		</plugin>
+	</gazebo>
+
+</robot>
+
