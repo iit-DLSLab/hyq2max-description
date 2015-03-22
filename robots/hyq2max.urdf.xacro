@@ -22,7 +22,7 @@
 	<!-- Generic simulator_gazebo plugins for starting mechanism control, ros time -->
 	<xacro:include filename="$(find hyq2max_description)/gazebo/gazebo.urdf.xacro"/>
 
-	<!-- Now we can start using the macros included above to define the actual HyQ -->
+	<!-- Now we can start using the macros included above to define the actual HyQ2Max -->
 
 	<!-- The first use of a macro. This one was defined in trunk.urdf.xacro above.
 A macro like this will expand to a set of link and joint definitions, and to additional
@@ -32,8 +32,8 @@ that equals "base", and uses it to generate names for its component links and jo
 the origin block defines where the component is w.r.t its parent (in this case the parent
 is the world frame). For more, see http://www.ros.org/wiki/xacro -->
 
-	<!-- body -->
-	<!-- torso -->
+	<!-- Body -->
+	<!-- Trunk -->
 	<xacro:hyq2max_trunk name="base">
 		<origin xyz="-0.443 -0.191 -0.276" rpy="0 0 0"/>
 	</xacro:hyq2max_trunk>
@@ -42,41 +42,39 @@ is the world frame). For more, see http://www.ros.org/wiki/xacro -->
 	<xacro:hyq2max_leg
 		name="lf"
 		parent="trunk"
-		reflect_hip="1"
-		reflect_upper="1"
+		reflect_left="1"
 		reflect_front="1">
-		<origin xyz="${d_fh/2} ${d_lr/2} 0" rpy="0 ${PI/2} ${PI}"/>
+		<origin xyz="0.4435 0.097 0" rpy="${PI} ${PI/2} 0"/> 
+<!--		<origin xyz="${d_fh/2} ${d_lr/2} 0" rpy="0 ${PI/2} ${PI}"/>-->
 	</xacro:hyq2max_leg>
 
 	<!-- RF leg -->
-<!--	<xacro:hyq2max_leg
+	<xacro:hyq2max_leg
 		name="rf"
 		parent="trunk"
-		reflect_hip="-1"
-		reflect_upper="-1"
+		reflect_left="-1"
 		reflect_front="1">
-		<origin xyz="${d_fh/2} ${-d_lr/2} 0" rpy="0 ${PI/2} 0"/>
-	</xacro:hyq2max_leg>-->
+		<origin xyz="0.4435 -0.097 0" rpy="0 ${PI/2} 0"/>
+<!--		<origin xyz="${d_fh/2} ${-d_lr/2} 0" rpy="0 ${PI/2} 0"/>-->
+	</xacro:hyq2max_leg>
 
 	<!-- LH leg -->
-<!--	<xacro:hyq2max_leg
+	<xacro:hyq2max_leg
 		name="lh"
 		parent="trunk"
-		reflect_hip="-1"
-		reflect_upper="1"
+		reflect_left="1"
 		reflect_front="-1">
-		<origin xyz="${-d_fh/2} ${d_lr/2} 0" rpy="0 ${PI/2} ${PI}"/>
-	</xacro:hyq2max_leg>-->
+		<origin xyz="-0.4435 0.097 0" rpy="${PI} ${PI/2} 0"/> 
+	</xacro:hyq2max_leg>
 
 	<!-- RH leg -->
-<!--	<xacro:hyq2max_leg
+	<xacro:hyq2max_leg
 		name="rh"
 		parent="trunk"
-		reflect_hip="1"
-		reflect_upper="-1"
+		reflect_left="-1"
 		reflect_front="-1">
-		<origin xyz="${-d_fh/2} ${-d_lr/2} 0" rpy="0 ${PI/2} 0"/>
-	</xacro:hyq2max_leg>-->
+		<origin xyz="-0.4435 -0.097 0" rpy="0 ${PI/2} 0"/>
+	</xacro:hyq2max_leg>
 
 	<!-- IMU trunk -->
 <!--	<xacro:microstrain_3dmgx325_imu

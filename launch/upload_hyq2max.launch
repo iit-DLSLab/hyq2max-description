@@ -7,7 +7,7 @@
 		<param name="robot_description" command="$(find xacro)/xacro.py '$(find hyq2max_description)/robots/hyq2max_with_arms.urdf.xacro'"/>
 	</group>
 	<group unless="$(arg arm)">
-		<param name="robot_description" command="$(find xacro)/xacro.py '$(find hy2max_description)/robots/hyq2max.urdf.xacro'"/>
+		<param name="robot_description" command="$(find xacro)/xacro.py '$(find hyq2max_description)/robots/hyq2max.urdf.xacro'"/>
 	</group>
 
 </launch>

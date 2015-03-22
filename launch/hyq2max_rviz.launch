@@ -16,13 +16,13 @@
 	</group>
 
 	<node name="robot_state_publisher" pkg="robot_state_publisher"
-		type="state_publisher" respawn="true">
+		type="state_publisher">
 		<param name="publish_frequency" value="200" />
 		<param name="rate" value="200" />
 	</node>
 
 	<!-- run rviz -->
-	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_conf) -f trunk" respawn="true"/>
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_conf) -f trunk"/>
 
 </launch>
 

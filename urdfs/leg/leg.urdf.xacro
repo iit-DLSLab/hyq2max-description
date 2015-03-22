@@ -9,124 +9,115 @@
 
 
 	<!-- ================================== Leg ================================== -->
-	<!-- The xacro macro xacro:hyq_leg contains: hip assembly, upper and lower leg -->
-	<xacro:macro name="hyq2max_leg" params="name parent *origin reflect_hip reflect_upper reflect_front">
-
+	<!-- The xacro macro xacro:hyq2max_leg contains: hip assembly, upper and lower leg -->
+	<xacro:macro name="hyq2max_leg" params="name parent *origin reflect_left reflect_front">
 		<!-- Joints -->
 		<!-- Hip assembly joint -->
-		<joint name="${name}_haa_assembly_joint" type="fixed">
+		<joint name="${name}_haa_joint" type="revolute">
 			<insert_block name="origin"/>
 			<parent link="${parent}"/>
-			<child  link="${name}_assembly"/>
-		</joint>
-		<!-- Hip joint assembly -->
-		<joint name="${name}_haa_joint" type="revolute">
-			<origin xyz="0 0 0" rpy="0 0 ${haa_pos0}"/> 
-			<parent link="${name}_assembly"/>
-			<!--<insert_block name="origin"/>-->
-			<!--<parent link="${parent}"/>-->
-			<child  link="${name}_hip_assembly"/>
-			<limit effort="150.0" velocity="12.0" lower="${-PI/2-haa_pos0}" upper="${PI/6-haa_pos0}"/>
+			<child  link="${name}_hipassembly"/>
 			<axis xyz="0 0 1"/>
 			<dynamics damping="0.1" friction="0" />
-			<safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10" soft_upper_limit="12.45" />
+			<limit effort="150.0" velocity="12.0" lower="${-2*PI/9}" upper="${2*PI/9}"/>
+			<safety_controller k_position="100" k_velocity="100"
+							   soft_lower_limit="-10" soft_upper_limit="12.45" />
 		</joint>
 		<!-- Upper leg joint -->
 		<joint name="${name}_hfe_joint" type="revolute">
-			<origin xyz="${d_tbb} 0.0 0.0" rpy="${reflect_upper*PI/2} ${-reflect_hip*hfe_pos0} 0.0"/>
-			<parent link="${name}_hip_assembly"/>
-			<child  link="${name}_upper_leg"/>
-			<limit effort="150.0" velocity="12.0" lower="${-(1+reflect_front)*5*PI/36-(1-reflect_front)*7*PI/36-reflect_front*hfe_pos0}" upper="${(1-reflect_front)*5*PI/36+(1+reflect_front)*7*PI/36-reflect_front*hfe_pos0}"/>
+			<origin xyz="0 ${-upperleg_length} 0"
+					rpy="${reflect_left*PI/2} 0 0"/>
+			<parent link="${name}_hipassembly"/>
+			<child  link="${name}_upperleg"/>
 			<axis xyz="0 0 1"/>
 			<dynamics damping="0.1" friction="0" />
-			<safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10" soft_upper_limit="12.45" />
+			<limit effort="150.0" velocity="12.0" lower="${-3*PI/4}" upper="${3*PI/4}"/>
+			<safety_controller k_position="100" k_velocity="100"
+							   soft_lower_limit="-10" soft_upper_limit="12.45" />
 		</joint>
 		<!-- Lower leg joint -->
 		<joint name="${name}_kfe_joint" type="revolute">
-			<origin xyz="${d_p1p2} 0 0" rpy="0 0 ${reflect_front*kfe_pos0}"/>
-			<parent link="${name}_upper_leg"/>
-			<child  link="${name}_lower_leg"/>
-			<limit effort="150.0" velocity="12.0" lower="${-(1+reflect_front)*7*PI/18+(1-reflect_front)*PI/18-reflect_front*kfe_pos0}" upper="${(1-reflect_front)*7*PI/18-(1+reflect_front)*PI/18-reflect_front*kfe_pos0}"/>
+			<origin xyz="${lowerleg_length} 0 0" rpy="0 0 0"/>
+			<parent link="${name}_upperleg"/>
+			<child  link="${name}_lowerleg"/>
 			<axis xyz="0 0 1"/>
 			<dynamics damping="0.1" friction="0" />
-			<safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10" soft_upper_limit="12.45" />
-		<!-- Foot joint -->
+			<limit effort="150.0" velocity="12.0"
+				   lower="${(1-reflect_front)*3*PI/360-(1+reflect_front)*163*PI/360}"
+				   upper="${(1-reflect_front)*163*PI/360-(1+reflect_front)*3*PI/360}"/>
+			<safety_controller k_position="100" k_velocity="100"
+							   soft_lower_limit="-10" soft_upper_limit="12.45" />
 		</joint>
+		<!-- Foot joint -->
 		<joint name="${name}_foot_joint" type="fixed">
-			<origin xyz="0.34 0 0" rpy="${PI/2} 0 ${-PI/2}"/>
-			<parent link="${name}_lower_leg"/>
+			<origin xyz="0.37432 ${reflect_front*0.066} 0" rpy="${PI/2} 0 ${-PI/2}"/>
+			<parent link="${name}_lowerleg"/>
 			<child  link="${name}_foot"/>
 		</joint>
 
 
 		<!-- Links -->
 		<!-- Hip assembly link -->
-		<link name="${name}_assembly">
-			<inertial>
-				<origin xyz="0 0 0"/>
-				<mass value="0.01"/>
-				<inertia ixx="0.01" iyy="0.01" izz="0.01" ixy="0.0" ixz="0.0" iyz="0.0"/>
-			</inertial>
-		</link>
-		<!-- Hip assembly link -->
 		<link name="${name}_hipassembly">
 			<inertial>
-				<origin xyz="0.01310 ${reflect_hip*0.00010} ${reflect_hip*0.05730}"/>
+				<origin xyz="${xcom_hipassembly} ${ycom_hipassembly} ${zcom_hipassembly}"/>
 				<mass value="${m_hipassembly}"/>
 				<inertia ixx="${ixx_hipassembly}" iyy="${iyy_hipassembly}" izz="${izz_hipassembly}"
-						 ixy="${ixy_hipassembly}" ixz="${-reflect_hip*ixz_hipassembly}" iyz="${iyz_hipassembly}"/>
+						 ixy="${ixy_hipassembly}" ixz="${ixz_hipassembly}" iyz="${iyz_hipassembly}"/>
 			</inertial>
 			<visual>
-				<origin xyz="0 0 0" rpy="${(1-reflect_hip)*PI/2} 0 0"/>
+				<origin xyz="0 -0.046 0" rpy="0 ${-PI/2} ${-PI/2}"/><!-- TODO: -0.044 ask Jake -->
 				<geometry>
-					<mesh filename="package://hyq2max_description/meshes/leg/hipassembly.stl" scale="1 1 1"/>
+					<mesh filename="package://hyq2max_description/meshes/leg/hipassembly.dae" scale="1 1 1"/>
 				</geometry>
 			</visual>
 			<collision>
-				<origin xyz="0 0 0" rpy="${(1-reflect_hip)*PI/2} 0 0"/>
+				<origin xyz="0 -0.046 0" rpy="0 ${-PI/2} ${-PI/2}"/><!-- TODO: -0.044 ask Jake -->
 				<geometry>
-					<mesh filename="package://hyq2max_description/meshes/leg/hipassembly.stl" scale="1 1 1"/>
+					<mesh filename="package://hyq2max_description/meshes/leg/hipassembly.dae" scale="1 1 1"/>
 				</geometry>
 			</collision>
 		</link>
 		<!-- Upper leg link -->
 		<link name="${name}_upperleg">
 			<inertial>
-				<origin xyz="0.14796 ${reflect_upper*0.02958} 0"/>
+				<origin xyz="${xcom_upperleg} ${reflect_front*ycom_upperleg} ${reflect_left*zcom_upperleg}"/>
 				<mass value="${m_upperleg}"/>
 				<inertia ixx="${ixx_upperleg}" iyy="${iyy_upperleg}" izz="${izz_upperleg}"
-						 ixy="${ixy_upperleg}" ixz="${ixz_upperleg}" iyz="${iyz_upperleg}"/>
+						 ixy="${reflect_front*ixy_upperleg}" ixz="${reflect_left*ixz_upperleg}" iyz="${reflect_left*reflect_front*iyz_upperleg}"/>
 			</inertial>
 			<visual> 
-				<origin xyz="0 0 0" rpy="${(1-reflect_front)*PI/2} 0 0"/>
+				<origin xyz="0 0 ${-0.03*reflect_left}" rpy="${(1-reflect_left)*PI/2} 0 0"/> <!-- TODO Ask displacement Jake -->
 				<geometry>
-					<mesh filename="package://hyq2max_description/meshes/leg/upperleg.stl" scale="1 1 1"/>
+					<mesh filename="package://hyq2max_description/meshes/leg/upperleg.dae" scale="1 1 1"/>
 				</geometry>
 			</visual>
 			<collision>
-				<origin xyz="0 0 0" rpy="${(1-reflect_front)*PI/2} 0 0"/>
+				<origin xyz="0 0 ${-0.03*reflect_left}" rpy="${(1-reflect_left)*PI/2} 0 0"/> <!-- TODO Ask displacement Jake -->
 				<geometry>
-					<mesh filename="package://hyq2max_description/meshes/leg/upperleg.stl" scale="1 1 1"/>
+					<mesh filename="package://hyq2max_description/meshes/leg/upperleg.dae" scale="1 1 1"/>
 				</geometry>
 			</collision>
 		</link>
 		<!-- Lower leg link -->
 		<link name="${name}_lowerleg">
 			<inertial>
-				<origin xyz=" 0.17830  0.00030 -0.00010"/>
+				<origin xyz="${xcom_lowerleg} ${reflect_front*ycom_lowerleg} ${reflect_front*zcom_lowerleg}"/>
 				<mass value="${m_lowerleg}"/>
 				<inertia ixx="${ixx_lowerleg}" iyy="${iyy_lowerleg}" izz="${izz_lowerleg}"
-						 ixy="${ixy_lowerleg}" ixz="${ixz_lowerleg}" iyz="${iyz_lowerleg}"/>
+						 ixy="${reflect_front*ixy_lowerleg}" ixz="${reflect_front*ixz_lowerleg}" iyz="${iyz_lowerleg}"/>
 			</inertial>
 			<visual>
+				<origin xyz="0 0 0" rpy="${(1-reflect_front)*PI/2} 0 ${PI}"/> <!-- TODO Ask displacement Jake -->
 				<geometry>
-					<mesh filename="package://hyq2max_description/meshes/leg/lowerleg.stl" scale="1 1 1"/>
+					<mesh filename="package://hyq2max_description/meshes/leg/lowerleg.dae" scale="1 1 1"/>
 				</geometry>
 				<material name="white"/>
 			</visual>
 			<collision>
+				<origin xyz="0 0 0" rpy="${(1-reflect_front)*PI/2} 0 ${PI}"/> <!-- TODO Ask displacement Jake -->
 				<geometry>
-					<mesh filename="package://hyq2max_description/meshes/leg/lowerleg.stl" scale="1 1 1"/>
+					<mesh filename="package://hyq2max_description/meshes/leg/lowerleg.dae" scale="1 1 1"/>
 				</geometry>
 			</collision>
 		</link>
