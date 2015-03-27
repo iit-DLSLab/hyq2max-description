@@ -10,8 +10,13 @@
 		</plugin>
 
 		<plugin filename="libgazebo_ros_p3d.so" name="gazebo_ros_p3d">
+			<robotNamespace>/hyq2max</robotNamespace>
 		 	<bodyName>base_link</bodyName>
-			<topicName>hyq2max/odometry</topicName>
+			<topicName>odometry</topicName>
+			<frameName>world</frameName>
+			<xyzOffsets>0 0 0</xyzOffsets>
+			<rpyOffsets>0 0 0</rpyOffsets>
+			<gaussianNoise>0</gaussianNoise>
 			<alwaysOn>true</alwaysOn>
 			<updateRate>200.0</updateRate>
 		</plugin>
