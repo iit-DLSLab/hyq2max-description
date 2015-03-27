@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-	<xacro:include filename="$(find hyq_description)/urdfs/sensors/stereo_camera.gazebo.xacro"/>
+	<xacro:include filename="$(find hyq2max_description)/urdfs/sensors/stereo_camera.gazebo.xacro"/>
 
 	<xacro:macro name="vislab_3dve" params="name parent xyz rpy high_res hfov">
 		<joint name="${name}_vislab_3dve_mount_joint" type="fixed">

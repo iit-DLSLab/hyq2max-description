@@ -11,7 +11,7 @@
 	<xacro:include filename="$(find hyq2max_description)/urdfs/leg/leg.urdf.xacro"/>
 
 	<!-- HyQ2Max sensors -->
-	<xacro:include filename="$(find hyq2max_description)/urdfs/sensors/microstrain_3dmgx325_imu.urdf.xacro"/>
+	<xacro:include filename="$(find hyq2max_description)/urdfs/sensors/microstrain_3dmgx425_imu.urdf.xacro"/>
 	<xacro:include filename="$(find hyq2max_description)/urdfs/sensors/asus_xtion.urdf.xacro"/>
 	<xacro:include filename="$(find hyq2max_description)/urdfs/sensors/velodyne.urdf.xacro"/>
 	<xacro:include filename="$(find hyq2max_description)/urdfs/sensors/kinect.urdf.xacro"/>
@@ -77,14 +77,21 @@ is the world frame). For more, see http://www.ros.org/wiki/xacro -->
 	</xacro:hyq2max_leg>
 
 	<!-- IMU trunk -->
-<!--	<xacro:microstrain_3dmgx325_imu
+	<xacro:microstrain_3dmgx425_imu
 		parent="trunk"
-		imu_name="3dmgx325_trunk_imu"
+		imu_name="3dmgx345_trunk_imu"
 		imu_topic="trunk_imu/data"
-		update_rate="100.0"
-		stdev="0.00017">
+		update_rate="1000"
+		rate_mean="0"
+		rate_stddev="2e-4"
+		rate_bias_mean="0.00087"
+		rate_bias_stddev="0.0000008"
+		accel_mean="0"
+		accel_stddev="1.7e-2"
+		accel_bias_mean="0.002"
+		accel_bias_stddev="0.001">
 		<origin xyz="0.3 0 0.095" rpy="0 ${-PI} 0"/>
-	</xacro:microstrain_3dmgx325_imu>-->
+	</xacro:microstrain_3dmgx425_imu>
 
 	<!-- Velodyne -->
 <!--	<xacro:velodyne

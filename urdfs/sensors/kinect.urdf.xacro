@@ -2,9 +2,7 @@
 
 <root xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-
-
-	<xacro:include filename="$(find hyq_description)/urdfs/sensors/kinect.gazebo.xacro" />
+	<xacro:include filename="$(find hyq2max_description)/urdfs/sensors/kinect.gazebo.xacro" />
 
 	<property name="ir_depth_rgb_offset_y" value="0.01"/> <!-- FIXME: what is this offset? -->
 
