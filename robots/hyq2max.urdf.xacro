@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<robot name="hyq" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="hyq2max" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 	<!-- The following included files set up definitions of parts of the robot body -->
 	<xacro:include filename="$(find hyq2max_description)/urdfs/common.xacro"/>
