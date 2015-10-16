@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<robot name="hyq" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<!-- The following included files set up definitions of parts of the robot body -->
+	<xacro:include filename="$(find hyq2max_description)/urdfs/common.xacro"/>
+	<!-- HyQ2Max torso -->
+	<xacro:include filename="$(find hyq2max_description)/urdfs/trunk/trunk_model.urdf.xacro"/>
+
+	<!-- HyQ2Max legs -->
+	<xacro:include filename="$(find hyq2max_description)/urdfs/leg/leg.urdf.xacro"/>
+
+	<!-- Generic simulator_gazebo plugins for starting mechanism control, ros time -->
+	<xacro:include filename="$(find hyq2max_description)/gazebo/gazebo.urdf.xacro"/>
+
+	<!-- Now we can start using the macros included above to define the actual HyQ2Max -->
+
+	<!-- The first use of a macro. This one was defined in trunk.urdf.xacro above.
+A macro like this will expand to a set of link and joint definitions, and to additional
+Gazebo-related extensions (sensor plugins, etc). The macro takes an argument, name,
+that equals "base", and uses it to generate names for its component links and joints
+(e.g., base_link). The included origin block is also an argument to the macro. By convention,
+the origin block defines where the component is w.r.t its parent (in this case the parent
+is the world frame). For more, see http://www.ros.org/wiki/xacro -->
+
+	<!-- Body -->
+	<!-- Trunk -->
+	<xacro:hyq2max_trunk name="base">
+		<origin xyz="-0.443 -0.191 -0.276" rpy="0 0 0"/>
+	</xacro:hyq2max_trunk>
+
+	<!-- LF leg -->
+	<xacro:hyq2max_leg
+		name="lf"
+		parent="trunk"
+		reflect_left="1"
+		reflect_front="1">
+		<origin xyz="0.4435 0.097 0" rpy="${PI} ${PI/2} 0"/> 
+<!--		<origin xyz="${d_fh/2} ${d_lr/2} 0" rpy="0 ${PI/2} ${PI}"/>-->
+	</xacro:hyq2max_leg>
+
+	<!-- RF leg -->
+	<xacro:hyq2max_leg
+		name="rf"
+		parent="trunk"
+		reflect_left="-1"
+		reflect_front="1">
+		<origin xyz="0.4435 -0.097 0" rpy="0 ${PI/2} 0"/>
+<!--		<origin xyz="${d_fh/2} ${-d_lr/2} 0" rpy="0 ${PI/2} 0"/>-->
+	</xacro:hyq2max_leg>
+
+	<!-- LH leg -->
+	<xacro:hyq2max_leg
+		name="lh"
+		parent="trunk"
+		reflect_left="1"
+		reflect_front="-1">
+		<origin xyz="-0.4435 0.097 0" rpy="${PI} ${PI/2} 0"/> 
+	</xacro:hyq2max_leg>
+
+	<!-- RH leg -->
+	<xacro:hyq2max_leg
+		name="rh"
+		parent="trunk"
+		reflect_left="-1"
+		reflect_front="-1">
+		<origin xyz="-0.4435 -0.097 0" rpy="0 ${PI/2} 0"/>
+	</xacro:hyq2max_leg>
+
+</robot>
