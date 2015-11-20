@@ -5,8 +5,8 @@
 	<gazebo>
 		<plugin name="gazebo_ros_controller_manager" filename="libgazebo_ros_control.so">
 			<robotNamespace>/hyq2max</robotNamespace>
-<!--			<robotSimType>hyq2max_gazebo/HyQ2MaxHWSim</robotSimType>-->
-			<controlPeriod>0.001</controlPeriod>
+			<robotSimType>hyq2max_gazebo/HyQ2MaxHWSim</robotSimType>
+			<controlPeriod>0.005</controlPeriod>
 		</plugin>
 
 		<plugin filename="libgazebo_ros_p3d.so" name="gazebo_ros_p3d">
@@ -18,7 +18,7 @@
 			<rpyOffsets>0 0 0</rpyOffsets>
 			<gaussianNoise>0</gaussianNoise>
 			<alwaysOn>true</alwaysOn>
-			<updateRate>200.0</updateRate>
+			<updateRate>250.0</updateRate>
 		</plugin>
 	</gazebo>
 
