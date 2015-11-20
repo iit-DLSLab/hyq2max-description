@@ -21,28 +21,28 @@ if __name__ == "__main__":
 	param_name = 'robot_description'
 	# LF foot
 	joint_names.append('lf_haa_joint')
-	joint_positions.append(0.)
+	joint_positions.append(-0.1)
 	joint_names.append('lf_hfe_joint')
 	joint_positions.append(0.75)
 	joint_names.append('lf_kfe_joint')
 	joint_positions.append(-1.5)
 	# RF foot
 	joint_names.append('rf_haa_joint')
-	joint_positions.append(0.)
+	joint_positions.append(-0.1)
 	joint_names.append('rf_hfe_joint')
 	joint_positions.append(0.75)
 	joint_names.append('rf_kfe_joint')
 	joint_positions.append(-1.5)
 	# LH foot
 	joint_names.append('lh_haa_joint')
-	joint_positions.append(0.)
+	joint_positions.append(-0.1)
 	joint_names.append('lh_hfe_joint')
 	joint_positions.append(-0.75)
 	joint_names.append('lh_kfe_joint')
 	joint_positions.append(1.5)
 	# RH foot
 	joint_names.append('rh_haa_joint')
-	joint_positions.append(0.)
+	joint_positions.append(-0.1)
 	joint_names.append('rh_hfe_joint')
 	joint_positions.append(-0.75)
 	joint_names.append('rh_kfe_joint')
@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
 	gazebo_namespace = '/gazebo'
 	rospy.wait_for_service('%s/set_model_configuration'%(gazebo_namespace))
-	rospy.sleep(5.)
+	rospy.sleep(10.)
 	try:
 		success = gazebo_interface.set_model_configuration_client(model_name, param_name, 
                                                                   joint_names, joint_positions, gazebo_namespace)
