@@ -37,7 +37,7 @@
 	<include file="$(find hyq2max_description)/launch/upload_hyq2max.launch"/>
 
 	<!-- Spawn a robot into Gazebo -->
-	<node name="spawn_hyq2max_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model hyq2max -z 0.60"/>
+	<node name="spawn_hyq2max_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model hyq2max -z 0.65"/>
 
 	<!-- Get robot to 0 position -->
 	<node name="goto0" pkg="hyq2max_description" type="go0" args="10.0"/>
