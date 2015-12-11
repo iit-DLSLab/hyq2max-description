@@ -8,7 +8,7 @@
 	<arg name="debug" default="false"/>
 	<arg name="fast_simulation" default="true"/>
 
-	<arg if="$(arg fast_simulation)" name="world_name" default="$(find gazebo_environments)/worlds/empty.world"/>
+	<arg if="$(arg fast_simulation)" name="world_name" default="$(find hyq2max_description)/gazebo/empty.world"/>
 	<arg unless="$(arg fast_simulation)" name="world_name" default="worlds/empty.world"/>
 
 	<!-- Set use_sim_time flag -->
