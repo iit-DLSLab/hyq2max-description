@@ -19,7 +19,7 @@
 			<child  link="${name}_hipassembly"/>
 			<axis xyz="0 0 1"/>
 			<dynamics damping="0.1" friction="0" />
-			<limit effort="150.0" velocity="12.0" lower="${-2*PI/9}" upper="${2*PI/9}"/>
+			<limit effort="120.0" velocity="12.0" lower="${-2*PI/9}" upper="${2*PI/9}"/>
 			<safety_controller k_position="100" k_velocity="100"
 							   soft_lower_limit="${-2*PI/9}" soft_upper_limit="${2*PI/9}" />
 		</joint>
@@ -31,7 +31,7 @@
 			<child  link="${name}_upperleg"/>
 			<axis xyz="0 0 1"/>
 			<dynamics damping="0.1" friction="0" />
-			<limit effort="150.0" velocity="12.0" lower="${-3*PI/4}" upper="${3*PI/4}"/>
+			<limit effort="245.0" velocity="12.0" lower="${-3*PI/4}" upper="${3*PI/4}"/>
 			<safety_controller k_position="100" k_velocity="100"
 							   soft_lower_limit="${-3*PI/4}" soft_upper_limit="${3*PI/4}" />
 		</joint>
@@ -42,7 +42,7 @@
 			<child  link="${name}_lowerleg"/>
 			<axis xyz="0 0 1"/>
 			<dynamics damping="0.1" friction="0" />
-			<limit effort="150.0" velocity="12.0"
+			<limit effort="250.0" velocity="12.0"
 				   lower="${-(1+reflect_front)*167*PI/360}"
 				   upper="${(1-reflect_front)*167*PI/360}"/>
 			<safety_controller k_position="100" k_velocity="100"
