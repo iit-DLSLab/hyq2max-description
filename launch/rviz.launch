@@ -1,7 +1,8 @@
+<?xml version="1.0" ?>
 <launch>
 
 	<!-- send hyq urdf to param server and spawn it -->
-	<include file="$(find hyq2max_description)/launch/upload_hyq2max.launch"/>
+	<include file="$(find hyq2max_description)/launch/upload.launch"/>
 
 	<arg name="gui" default="True"/>
 	<arg name="rviz_conf" default="$(find hyq2max_description)/rviz/hyq2max_model_tf.rviz"/>

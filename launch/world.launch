@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <launch>
 
 	<!-- These are the arguments you can pass this launch file, for example paused:=true -->
@@ -8,9 +9,11 @@
 	<arg name="debug" default="false"/>
 	<arg name="fast_simulation" default="false"/>
 	<arg name="dls_empty_world" default="true"/>
+	<arg name="world_name" default="empty.world"/>
 
-	<arg if="$(arg dls_empty_world)" name="world_name" default="$(find dls_gazebo)/worlds/empty.world"/>
-	<arg unless="$(arg dls_empty_world)" name="world_name" default="worlds/empty.world"/>
+
+	<arg if="$(arg dls_empty_world)" name="full_world_name" default="$(find dls_gazebo)/worlds/$(arg world_name)"/>
+	<arg unless="$(arg dls_empty_world)" name="full_world_name" default="worlds/$(arg world_name)"/>
 
 	<!-- Set use_sim_time flag -->
 	<group if="$(arg use_sim_time)">
@@ -27,7 +30,7 @@
 
 	<!-- Start gazebo server-->
 	<node name="gazebo" pkg="gazebo_ros" type="$(arg script_type)" respawn="false" output="screen"
-		args="$(arg command_arg1) $(arg command_arg2) $(arg world_name)" />
+		args="$(arg command_arg1) $(arg command_arg2) $(arg full_world_name)" />
 	
 	<!-- Start gazebo client -->
 	<group if="$(arg gui)">
@@ -35,7 +38,7 @@
 	</group>
 
 	<!-- Send hyq urdf to parameter server and spawn it -->
-	<include file="$(find hyq2max_description)/launch/upload_hyq2max.launch"/>
+	<include file="$(find hyq2max_description)/launch/upload.launch"/>
 
 	<!-- Spawn a robot into Gazebo -->
 	<node name="spawn_hyq2max_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model hyq2max -z 0.65"/>
