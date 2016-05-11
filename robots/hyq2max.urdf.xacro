@@ -11,13 +11,13 @@
 	<xacro:include filename="$(find hyq2max_description)/urdfs/leg/leg.urdf.xacro"/>
 
 	<!-- HyQ2Max sensors -->
-	<xacro:include filename="$(find hyq2max_description)/urdfs/sensors/microstrain_3dmgx425_imu.urdf.xacro"/>
-	<xacro:include filename="$(find hyq2max_description)/urdfs/sensors/asus_xtion.urdf.xacro"/>
-	<xacro:include filename="$(find hyq2max_description)/urdfs/sensors/velodyne.urdf.xacro"/>
-	<xacro:include filename="$(find hyq2max_description)/urdfs/sensors/kinect.urdf.xacro"/>
-	<xacro:include filename="$(find hyq2max_description)/urdfs/sensors/ptu_d46.urdf.xacro"/>
-	<xacro:include filename="$(find hyq2max_description)/urdfs/sensors/bumblebee.urdf.xacro"/>
-	<xacro:include filename="$(find hyq2max_description)/urdfs/sensors/vislab_3dve.urdf.xacro"/>
+	<xacro:include filename="$(find sensors_description)/urdfs/sensors/microstrain_3dmgx425_imu.urdf.xacro"/>
+	<xacro:include filename="$(find sensors_description)/urdfs/sensors/asus_xtion.urdf.xacro"/>
+	<xacro:include filename="$(find sensors_description)/urdfs/sensors/velodyne.urdf.xacro"/>
+	<xacro:include filename="$(find sensors_description)/urdfs/sensors/kinect.urdf.xacro"/>
+	<xacro:include filename="$(find sensors_description)/urdfs/sensors/ptu_d46.urdf.xacro"/>
+	<xacro:include filename="$(find sensors_description)/urdfs/sensors/bumblebee.urdf.xacro"/>
+	<xacro:include filename="$(find sensors_description)/urdfs/sensors/vislab_3dve.urdf.xacro"/>
 
 	<!-- Generic simulator_gazebo plugins for starting mechanism control, ros time -->
 	<xacro:include filename="$(find hyq2max_description)/gazebo/gazebo.urdf.xacro"/>
