@@ -3,6 +3,9 @@
 
 	<arg name="arm" default="false"/>
 
+	<!-- send the robot description file -->
+	<param name="/hyq2max/robot_config" value="$(find hyq2max_description)/yarf/hyq2max.yarf"/>
+
 	<!-- send HyQ2Max urdf to param server -->
 	<group if="$(arg arm)">
 		<param name="robot_description" command="$(find xacro)/xacro.py '$(find hyq2max_description)/robots/hyq2max_with_arms.urdf.xacro'"/>
