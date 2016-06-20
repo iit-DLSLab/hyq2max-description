@@ -7,8 +7,9 @@
 	<!-- standard distances -->
 	<property name="d_lr" value="0.414"/>
 	<property name="d_fh" value="0.747"/>
-	<property name="upperleg_length" value="0.1075"/>
-	<property name="lowerleg_length" value="0.364"/>
+	<property name="hipassembly_length" value="0.1075"/>
+	<property name="upperleg_length" value="0.364"/>
+    <property name="lowerleg_length" value="0.38009"/>
 
 	<!-- Knee offset angel in degree -->
 	<property name="knee_offset_angle" value="10"/>

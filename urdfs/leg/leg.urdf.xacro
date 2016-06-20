@@ -12,7 +12,7 @@
 	<!-- The xacro macro xacro:hyq2max_leg contains: hip assembly, upper and lower leg -->
 	<xacro:macro name="hyq2max_leg" params="name parent *origin reflect_left reflect_front">
 		<!-- Joints -->
-		<!-- Hip assembly joint -->
+		<!-- HAA joint -->
 		<joint name="${name}_haa_joint" type="revolute">
 			<insert_block name="origin"/>
 			<parent link="${parent}"/>
@@ -23,9 +23,9 @@
 			<safety_controller k_position="100" k_velocity="100"
 							   soft_lower_limit="${-2*PI/9}" soft_upper_limit="${2*PI/9}" />
 		</joint>
-		<!-- Upper leg joint -->
+		<!-- HFE joint -->
 		<joint name="${name}_hfe_joint" type="revolute">
-			<origin xyz="0 ${-upperleg_length} 0"
+			<origin xyz="0 ${-hipassembly_length} 0"
 					rpy="${reflect_left*PI/2} 0 0"/>
 			<parent link="${name}_hipassembly"/>
 			<child  link="${name}_upperleg"/>
@@ -35,9 +35,9 @@
 			<safety_controller k_position="100" k_velocity="100"
 							   soft_lower_limit="${-3*PI/4}" soft_upper_limit="${3*PI/4}" />
 		</joint>
-		<!-- Lower leg joint -->
+		<!-- KFE joint -->
 		<joint name="${name}_kfe_joint" type="revolute">
-			<origin xyz="${lowerleg_length} 0 0" rpy="0 0 ${reflect_front*knee_offset_angle*PI/180}"/>
+			<origin xyz="${upperleg_length} 0 0" rpy="0 0 ${reflect_front*knee_offset_angle*PI/180}"/>
 			<parent link="${name}_upperleg"/>
 			<child  link="${name}_lowerleg"/>
 			<axis xyz="0 0 1"/>
@@ -51,7 +51,7 @@
 		</joint>
 		<!-- Foot joint -->
 		<joint name="${name}_foot_joint" type="fixed">
-			<origin xyz="0.380094 0 0" rpy="${PI/2} 0 ${-PI/2}"/>
+			<origin xyz="${lowerleg_length} 0 0" rpy="${PI/2} 0 ${-PI/2}"/>
 			<parent link="${name}_lowerleg"/>
 			<child  link="${name}_foot"/>
 		</joint>
