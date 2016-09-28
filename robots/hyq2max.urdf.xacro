@@ -7,6 +7,8 @@
 
 	<!-- The following included files set up definitions of parts of the robot body -->
 	<xacro:include filename="$(find hyq2max_description)/urdfs/common.xacro"/>
+	<xacro:include filename="$(find sensors_description)/urdfs/common.xacro"/>
+
 	<!-- HyQ2Max torso -->
 	<xacro:include filename="$(find hyq2max_description)/urdfs/trunk/trunk.urdf.xacro"/>
 
@@ -86,17 +88,9 @@ is the world frame). For more, see http://www.ros.org/wiki/xacro -->
 	<!-- IMU trunk -->
 	<xacro:microstrain_3dmgx425_imu
 		parent="trunk"
-		imu_name="3dmgx345_trunk_imu"
+		imu_name="trunk_imu"
 		imu_topic="trunk_imu/data"
-		update_rate="1000"
-		rate_mean="0"
-		rate_stddev="2e-4"
-		rate_bias_mean="0.00087"
-		rate_bias_stddev="0.0000008"
-		accel_mean="0"
-		accel_stddev="1.7e-2"
-		accel_bias_mean="0.002"
-		accel_bias_stddev="0.001">
+		update_rate="1000">
 		<origin xyz="0.005 0 0.00125" rpy="0 ${-PI} 0"/>
 	</xacro:microstrain_3dmgx425_imu>
 
