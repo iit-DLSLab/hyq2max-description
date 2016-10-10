@@ -12,7 +12,7 @@
     <property name="lowerleg_length" value="0.38009"/>
 
 	<!-- Knee offset angel in degree -->
-	<property name="knee_offset_angle" value="10"/>
+	<property name="knee_offset_angle" value="10."/>
 
 	<!-- Inertial values -->
 	<!-- Trunk with hydraulic system -->

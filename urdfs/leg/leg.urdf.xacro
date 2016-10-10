@@ -37,7 +37,7 @@
 		</joint>
 		<!-- KFE joint -->
 		<joint name="${name}_kfe_joint" type="revolute">
-			<origin xyz="${upperleg_length} 0 0" rpy="0 0 ${reflect_front*knee_offset_angle*PI/180}"/>
+			<origin xyz="${upperleg_length} 0 0" rpy="0 0 0"/>
 			<parent link="${name}_upperleg"/>
 			<child  link="${name}_lowerleg"/>
 			<axis xyz="0 0 1"/>
