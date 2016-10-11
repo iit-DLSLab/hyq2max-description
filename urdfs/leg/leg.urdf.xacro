@@ -67,13 +67,13 @@
 						 ixy="${ixy_hipassembly}" ixz="${ixz_hipassembly}" iyz="${iyz_hipassembly}"/>
 			</inertial>
 			<visual>
-				<origin xyz="0 -0.046 0" rpy="0 ${-PI/2} ${-PI/2}"/><!-- TODO: -0.044 ask Jake -->
+				<origin xyz="0 -0.046 0" rpy="0 ${-PI/2} ${-PI/2}"/>
 				<geometry>
 					<mesh filename="package://hyq2max_description/meshes/leg/hipassembly.dae" scale="1 1 1"/>
 				</geometry>
 			</visual>
 			<collision>
-				<origin xyz="0 -0.046 0" rpy="0 ${-PI/2} ${-PI/2}"/><!-- TODO: -0.044 ask Jake -->
+				<origin xyz="0 -0.046 0" rpy="0 ${-PI/2} ${-PI/2}"/>
 				<geometry>
 					<mesh filename="package://hyq2max_description/meshes/leg/hipassembly.dae" scale="1 1 1"/>
 				</geometry>
@@ -88,13 +88,13 @@
 						 ixy="${reflect_front*ixy_upperleg}" ixz="${reflect_left*ixz_upperleg}" iyz="${reflect_left*reflect_front*iyz_upperleg}"/>
 			</inertial>
 			<visual> 
-				<origin xyz="0 0 ${-0.03*reflect_left}" rpy="${(1-reflect_left)*PI/2} 0 0"/> <!-- TODO Ask displacement Jake -->
+				<origin xyz="0 0 ${-0.03*reflect_left}" rpy="${(1-reflect_left)*PI/2} 0 0"/>
 				<geometry>
 					<mesh filename="package://hyq2max_description/meshes/leg/upperleg.dae" scale="1 1 1"/>
 				</geometry>
 			</visual>
 			<collision>
-				<origin xyz="0 0 ${-0.03*reflect_left}" rpy="${(1-reflect_left)*PI/2} 0 0"/> <!-- TODO Ask displacement Jake -->
+				<origin xyz="0 0 ${-0.03*reflect_left}" rpy="${(1-reflect_left)*PI/2} 0 0"/>
 				<geometry>
 					<mesh filename="package://hyq2max_description/meshes/leg/upperleg.dae" scale="1 1 1"/>
 				</geometry>
