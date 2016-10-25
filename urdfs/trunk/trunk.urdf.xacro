@@ -35,14 +35,18 @@
 			</inertial>
 			<visual>
 				<origin xyz="0 0 0" rpy="${PI/2} 0 ${PI/2}" />
+				<!-- <origin xyz="0 0 0" rpy="0 0 0" /> -->
 				<geometry>
-					<mesh filename="package://hyq2max_description/meshes/trunk/trunk.dae" scale="1 1 1"/>
+ 					<mesh filename="package://hyq2max_description/meshes/trunk/trunk.dae" scale="${trunkScale_width} 1 ${trunkScale_length}"/>
+				 <!-- <box size="1.306 0.400 0.318"/>  -->
 				</geometry>
 			</visual>
 			<collision>
 				<origin xyz="0 0 0" rpy="${PI/2} 0 ${PI/2}" />
+				<!-- <origin xyz="0 0 0" rpy="0 0 0" /> -->
 				<geometry>
-					<mesh filename="package://hyq2max_description/meshes/trunk/trunk.dae" scale="1 1 1"/>
+					<mesh filename="package://hyq2max_description/meshes/trunk/trunk.dae" scale="${trunkScale_width} 1 ${trunkScale_length}"/>
+				<!-- <box size="1.306 0.400 0.318"/>  -->
 				</geometry>
 			</collision>
 		</link>

@@ -69,16 +69,22 @@
 			<visual>
 				<origin xyz="0 -0.046 0" rpy="0 ${-PI/2} ${-PI/2}"/>
 				<geometry>
-					<mesh filename="package://hyq2max_description/meshes/leg/hipassembly.dae" scale="1 1 1"/>
+				<cylinder length="0.117" radius="0.0444"/>	
 				</geometry>
+                                <material name="black"/>
 			</visual>
+
 			<collision>
 				<origin xyz="0 -0.046 0" rpy="0 ${-PI/2} ${-PI/2}"/>
 				<geometry>
-					<mesh filename="package://hyq2max_description/meshes/leg/hipassembly.dae" scale="1 1 1"/>
+					<!-- <mesh filename="package://hyq2max_description/meshes/leg/hipassembly.dae" scale="1 1 1"/> -->
+				<cylinder length="0.117" radius="0.0444"/>	
 				</geometry>
 			</collision>
 		</link>
+		<gazebo reference="${name}_hipassembly">
+            		<material>Gazebo/Black</material>
+	        </gazebo>
 		<!-- Upper leg link -->
 		<link name="${name}_upperleg">
 			<inertial>
@@ -89,14 +95,20 @@
 			</inertial>
 			<visual> 
 				<origin xyz="0 0 ${-0.03*reflect_left}" rpy="${(1-reflect_left)*PI/2} 0 0"/>
+				<!-- <origin xyz="0.180 0 0" rpy="0 0 0"/> -->
 				<geometry>
 					<mesh filename="package://hyq2max_description/meshes/leg/upperleg.dae" scale="1 1 1"/>
+				<!-- <box size="0.360 0.116 0.07"/> -->
+				<!-- <cylinder length="0.360" radius="0.07"/> -->
 				</geometry>
 			</visual>
 			<collision>
 				<origin xyz="0 0 ${-0.03*reflect_left}" rpy="${(1-reflect_left)*PI/2} 0 0"/>
+				<!-- <origin xyz="0.180 0 0" rpy="0 0 0"/> -->
 				<geometry>
 					<mesh filename="package://hyq2max_description/meshes/leg/upperleg.dae" scale="1 1 1"/>
+				<!-- <box size="0.360 0.116 0.07"/> -->
+				<!-- <cylinder length="0.360" radius="0.07"/> -->
 				</geometry>
 			</collision>
 		</link>
@@ -129,12 +141,13 @@
 				<mass value="0.0"/>
 				<inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" ixz="0.0" iyz="0.0"/>
 			</inertial>
-			<!--<visual>
+			<visual>
 				<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
 				<geometry>
 					<sphere radius="0.021"/>
 				</geometry>
-			</visual>-->
+                                <material name="black"/>
+			</visual>
 			<collision>
 				<origin xyz="0 0 0" rpy="0 0 0"/>
 				<geometry>
@@ -142,7 +155,10 @@
 				</geometry>
 			</collision>
 		</link>
-		
+                <gazebo reference="${name}_foot">
+                	<material>Gazebo/Black</material>
+                </gazebo>
+	
 		<!-- Extensions -->
 		<xacro:leg_transmission name="${name}"/>
 		<xacro:leg_gazebo name="${name}" load_force_sensors="${load_force_sensors}"/>

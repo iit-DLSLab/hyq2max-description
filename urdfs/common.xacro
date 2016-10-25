@@ -7,6 +7,15 @@
 	<!-- standard distances -->
 	<property name="d_lr" value="0.414"/>
 	<property name="d_fh" value="0.747"/>
+
+	<property name="haa_lr" value="0.194"/>
+	<!-- 0.194  0.34125 -->
+	<property name="haa_fh" value="0.887"/>
+	<!-- 0.887 1.4192-->
+	
+	<property name="trunkScale_width" value="${haa_lr/0.194}"/>
+	<property name="trunkScale_length" value="${haa_fh/0.887}"/>
+
 	<property name="hipassembly_length" value="0.117"/>
 	<property name="upperleg_length" value="0.360"/>
     <property name="lowerleg_length" value="0.380"/>
@@ -26,6 +35,7 @@
 	<property name="ixy_trunk" value="-0.0050854"/>
 	<property name="ixz_trunk" value="0.0046576"/>
 	<property name="iyz_trunk" value="-0.0017613"/>
+	
 	<!-- Hip assembly -->
 	<property name="xcom_hipassembly" value="-0.000605"/>
 	<property name="ycom_hipassembly" value="-0.001346"/>
