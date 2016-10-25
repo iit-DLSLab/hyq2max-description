@@ -1,0 +1,196 @@
+
+
+%%%%%
+old robcogen 
+
+        CoM = (0.057737, 0.000687, -0.005584)
+        inertias.trunk_Ix  = 0.296767
+        inertias.trunk_Iy  = 4.418458
+        inertias.trunk_Iz  = 4.472778
+        inertias.trunk_Ixy = 0.008818
+        inertias.trunk_Ixz = 0.002473
+        inertias.trunk_Iyz = 0.000597
+        
+
+        x		 			y
+        0.194 (0.097)		0.887 (0.4435)
+
+1
+        inertias.trunk_Ix  = 0.446234136741375;
+        inertias.trunk_Iy  = 6.643820880886427;
+        inertias.trunk_Iz  = 6.725499228909595;
+        inertias.trunk_Ixy = 0.013259198690506;
+        inertias.trunk_Ixz = 0.003718530093176;
+        inertias.trunk_Iyz = 0.000897679929488;
+2;
+        inertias.trunk_Ix  = 0.649745767433394;
+        inertias.trunk_Iy  = 9.371567808116492;
+        inertias.trunk_Iz  = 9.878313187811454;
+        inertias.trunk_Ixy = 0.019888798035759;
+        inertias.trunk_Ixz =  0.004462236111811;
+        inertias.trunk_Iyz =  0.001122099911861;
+3;
+        inertias.trunk_Ix  =  0.898482204945863;
+        inertias.trunk_Iy  = 9.371567808116492;
+        inertias.trunk_Iz  = 10.964811800055346;
+        inertias.trunk_Ixy =  0.023866557642911;
+        inertias.trunk_Ixz =  0.004462236111811;
+        inertias.trunk_Iyz =  0.001346519894233;
+4;
+        inertias.trunk_Ix  =  1.192443449278779;
+        inertias.trunk_Iy  =  9.371567808116492;
+        inertias.trunk_Iz  = 12.248855614525397;
+        inertias.trunk_Ixy =  0.027844317250063;
+        inertias.trunk_Ixz =  0.004462236111811;
+        inertias.trunk_Iyz =  0.001570939876605;
+5;
+        inertias.trunk_Ix  =  0.649745767433394;
+        inertias.trunk_Iy  = 12.595268722115659;
+        inertias.trunk_Iz  = 12.553784745583611;
+        inertias.trunk_Ixy =  0.023203597708386;
+        inertias.trunk_Ixz =  0.005205942130446;
+        inertias.trunk_Iyz =  0.001122099911861;
+6;
+        inertias.trunk_Ix  =  0.898482204945863;
+        inertias.trunk_Iy  = 12.595268722115659;
+        inertias.trunk_Iz  = 13.640283357827501;
+        inertias.trunk_Ixy =  0.027844317250063;
+        inertias.trunk_Ixz =  0.005205942130446;
+        inertias.trunk_Iyz =  0.001346519894233;
+7;
+        inertias.trunk_Ix  =  1.192443449278779;
+        inertias.trunk_Iy  = 12.595268722115659;
+        inertias.trunk_Iz  = 14.924327172297552;
+        inertias.trunk_Ixy =  0.032485036791740;
+        inertias.trunk_Ixz =  0.005205942130446;
+        inertias.trunk_Iyz =  0.001570939876605;
+8;
+        inertias.trunk_Ix  =  0.649745767433394;
+        inertias.trunk_Iy  = 16.314923622883930;
+        inertias.trunk_Iz  = 15.640867312243792;
+        inertias.trunk_Ixy =  0.026518397381012;
+        inertias.trunk_Ixz =  0.005949648149081;
+        inertias.trunk_Iyz =  0.001122099911861;
+9;
+        inertias.trunk_Ix  =  0.898482204945863;
+        inertias.trunk_Iy  = 16.314923622883930;
+        inertias.trunk_Iz  = 16.727365924487682;
+        inertias.trunk_Ixy =  0.031822076857215;
+        inertias.trunk_Ixz =  0.005949648149081;
+        inertias.trunk_Iyz =  0.001346519894233;
+10;
+        inertias.trunk_Ix  =  1.192443449278779;
+        inertias.trunk_Iy  = 16.314923622883930;
+        inertias.trunk_Iz  = 18.011409738957730;
+        inertias.trunk_Ixy =  0.037125756333417;
+        inertias.trunk_Ixz =  0.005949648149081;
+        inertias.trunk_Iyz =  0.001570939876605;
+
+
+%%%%
+	<property name="m_trunk" value="59.71"/>
+lengths
+
+		FB    (%)	  	LR   (%)		Variation Number
+    0.7470 (100%)   0.4140 (100%)		1
+    	
+    0.8964 (120%)  0.5175 (125%)		2    
+    0.8964 (120%)  0.6210 (150%)		3
+    0.8964 (120%)  0.7245 (175%)		4
+	
+    1.0458 (140%)  0.5175 (125%)		5
+    1.0458 (140%)  0.6210 (150%)		6
+    1.0458 (140%)  0.7245 (175%)		7
+	
+    1.1952 (160%)  0.5175 (125%)		8
+    1.1952 (160%)  0.6210 (150%)		9
+    1.1952 (160%)  0.7245 (175%)		10
+
+
+            CoM = (0.060663, 0.000598, -0.007592)
+        Ix  = 0.454222285192647
+        Iy  = 7.144521784940821
+        Iz  = 7.253840254343994
+        Ixy = -0.007646669201712
+        Ixz = 0.007003407101486
+        Iyz = -0.002648381339713
+1
+
+	<property name="ixx_trunk" value="0.454222285192647"/>
+	<property name="iyy_trunk" value="7.144521784940821"/>
+	<property name="izz_trunk" value="7.253840254343994"/>
+	<property name="ixy_trunk" value="-0.007646669201712"/>
+	<property name="ixz_trunk" value="0.007003407101486"/>
+	<property name="iyz_trunk" value="-0.002648381339713"/>
+
+2
+	<property name="ixx_trunk" value="0.661377028286151"/>
+	<property name="iyy_trunk" value="10.077840984058122"/>
+	<property name="izz_trunk" value="10.654332623926479"/>
+	<property name="ixy_trunk" value="-0.011470003802569"/>
+	<property name="ixz_trunk" value="0.008404088521783"/>
+	<property name="iyz_trunk" value="-0.003310476674641"/>
+
+3
+	<property name="ixx_trunk" value="0.914566158733767"/>
+	<property name="iyy_trunk" value="10.077840984058122"/>
+	<property name="izz_trunk" value="11.826184274121585"/>
+	<property name="ixy_trunk" value="-0.013764004563082"/>
+	<property name="ixz_trunk" value="0.008404088521783"/>
+	<property name="iyz_trunk" value="-0.003972572009569"/>
+
+4
+	<property name="ixx_trunk" value="1.213789676535494"/>
+	<property name="iyy_trunk" value="10.077840984058122"/>
+	<property name="izz_trunk" value="13.211099860715800"/>
+	<property name="ixy_trunk" value="-0.016058005323596"/>
+	<property name="ixz_trunk" value="0.008404088521783"/>
+	<property name="iyz_trunk" value="-0.004634667344498"/>
+
+5
+	<property name="ixx_trunk" value="0.661377028286151"/>
+	<property name="iyy_trunk" value="13.544490946651297"/>
+	<property name="izz_trunk" value="13.539983580765060"/>
+	<property name="ixy_trunk" value="-0.013381671102997"/>
+	<property name="ixz_trunk" value="0.009804769942080"/>
+	<property name="iyz_trunk" value="-0.003310476674641"/>
+
+6
+	<property name="ixx_trunk" value="0.914566158733767"/>
+	<property name="iyy_trunk" value="13.544490946651297"/>
+	<property name="izz_trunk" value="14.711835230960165"/>
+	<property name="ixy_trunk" value="-0.016058005323596"/>
+	<property name="ixz_trunk" value="0.009804769942080"/>
+	<property name="iyz_trunk" value="-0.003972572009569"/>
+
+7
+	<property name="ixx_trunk" value="1.213789676535494"/>
+	<property name="iyy_trunk" value="13.544490946651297"/>
+	<property name="izz_trunk" value="16.096750817554380"/>
+	<property name="ixy_trunk" value="-0.018734339544195"/>
+	<property name="ixz_trunk" value="0.009804769942080"/>
+	<property name="iyz_trunk" value="-0.004634667344498"/>
+
+8
+	<property name="ixx_trunk" value="0.661377028286151"/>
+	<property name="iyy_trunk" value="17.544471672720345"/>
+	<property name="izz_trunk" value="16.869580838655730"/>
+	<property name="ixy_trunk" value="-0.015293338403425"/>
+	<property name="ixz_trunk" value="0.011205451362377"/>
+	<property name="iyz_trunk" value="-0.003310476674641"/>
+
+9
+	<property name="ixx_trunk" value="0.914566158733767"/>
+	<property name="iyy_trunk" value="17.544471672720345"/>
+	<property name="izz_trunk" value="18.041432488850834"/>
+	<property name="ixy_trunk" value="-0.018352006084110"/>
+	<property name="ixz_trunk" value="0.011205451362377"/>
+	<property name="iyz_trunk" value="-0.003972572009569"/>
+
+10
+	<property name="ixx_trunk" value="1.213789676535494"/>
+	<property name="iyy_trunk" value="17.544471672720345"/>
+	<property name="izz_trunk" value="19.426348075445050"/>
+	<property name="ixy_trunk" value="-0.021410673764795"/>
+	<property name="ixz_trunk" value="0.011205451362377"/>
+	<property name="iyz_trunk" value="-0.004634667344498"/>
