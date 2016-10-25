@@ -50,8 +50,8 @@ is the world frame). For more, see http://www.ros.org/wiki/xacro -->
 		reflect_left="1"
 		reflect_front="1"
 		load_force_sensors="$(arg load_force_sensors)">
-		<origin xyz="0.4435 0.097 0" rpy="${PI} ${PI/2} 0"/> 
-<!--		<origin xyz="${d_fh/2} ${d_lr/2} 0" rpy="0 ${PI/2} ${PI}"/>-->
+		<!-- <origin xyz="0.4435 0.097 0" rpy="${PI} ${PI/2} 0"/>  -->
+		<origin xyz="${haa_fh/2} ${haa_lr/2} 0" rpy="${PI} ${PI/2} 0"/>
 	</xacro:hyq2max_leg>
 
 	<!-- RF leg -->
@@ -61,8 +61,8 @@ is the world frame). For more, see http://www.ros.org/wiki/xacro -->
 		reflect_left="-1"
 		reflect_front="1"
 		load_force_sensors="$(arg load_force_sensors)">
-		<origin xyz="0.4435 -0.097 0" rpy="0 ${PI/2} 0"/>
-<!--		<origin xyz="${d_fh/2} ${-d_lr/2} 0" rpy="0 ${PI/2} 0"/>-->
+		<!-- <origin xyz="0.4435 -0.097 0" rpy="0 ${PI/2} 0"/> -->
+		<origin xyz="${haa_fh/2} ${-haa_lr/2} 0" rpy="0 ${PI/2} 0"/>
 	</xacro:hyq2max_leg>
 
 	<!-- LH leg -->
@@ -72,7 +72,9 @@ is the world frame). For more, see http://www.ros.org/wiki/xacro -->
 		reflect_left="1"
 		reflect_front="-1"
 		load_force_sensors="$(arg load_force_sensors)">
-		<origin xyz="-0.4435 0.097 0" rpy="${PI} ${PI/2} 0"/> 
+		<!-- <origin xyz="-0.4435 0.097 0" rpy="${PI} ${PI/2} 0"/>  -->
+		<origin xyz="${-haa_fh/2} ${haa_lr/2} 0" rpy="${PI} ${PI/2} 0"/>
+
 	</xacro:hyq2max_leg>
 
 	<!-- RH leg -->
@@ -82,7 +84,9 @@ is the world frame). For more, see http://www.ros.org/wiki/xacro -->
 		reflect_left="-1"
 		reflect_front="-1"
 		load_force_sensors="$(arg load_force_sensors)">
-		<origin xyz="-0.4435 -0.097 0" rpy="0 ${PI/2} 0"/>
+		<!-- <origin xyz="-0.4435 -0.097 0" rpy="0 ${PI/2} 0"/> -->
+		<origin xyz="${-haa_fh/2} ${-haa_lr/2} 0" rpy="0 ${PI/2} 0"/>
+
 	</xacro:hyq2max_leg>
 
 	<!-- IMU trunk -->
