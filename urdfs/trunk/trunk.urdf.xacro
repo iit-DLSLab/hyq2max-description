@@ -36,13 +36,13 @@
 			<visual>
 				<origin xyz="0 0 0" rpy="${PI/2} 0 ${PI/2}" />
 				<geometry>
-					<mesh filename="package://hyq2max_description/meshes/trunk/trunk.dae" scale="1 1 1"/>
+					<mesh filename="package://hyq2max_description/meshes/trunk/trunk.dae" scale="${trunkScale_width} 1 ${trunkScale_length}"/>
 				</geometry>
 			</visual>
 			<collision>
 				<origin xyz="0 0 0" rpy="${PI/2} 0 ${PI/2}" />
 				<geometry>
-					<mesh filename="package://hyq2max_description/meshes/trunk/trunk.dae" scale="1 1 1"/>
+					<mesh filename="package://hyq2max_description/meshes/trunk/trunk.dae" scale="${trunkScale_width} 1 ${trunkScale_length}"/>
 				</geometry>
 			</collision>
 		</link>

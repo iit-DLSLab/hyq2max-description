@@ -12,6 +12,9 @@
 	<!-- 0.194  0.34125 -->
 	<property name="haa_fh" value="0.887"/>
 	<!-- 0.887 1.4192-->
+	
+	<property name="trunkScale_width" value="${haa_lr/0.194}"/>
+	<property name="trunkScale_length" value="${haa_fh/0.887}"/>
 
 	<property name="hipassembly_length" value="0.117"/>
 	<property name="upperleg_length" value="0.360"/>
@@ -25,13 +28,13 @@
 	<property name="xcom_trunk" value="0.060663"/>
 	<property name="ycom_trunk" value="0.000598"/>
 	<property name="zcom_trunk" value="-0.007592"/>
-	<property name="m_trunk" value="79.71"/>
-	<property name="ixx_trunk" value="0.606365070385293"/>
-	<property name="iyy_trunk" value="9.537595569881642"/>
-	<property name="izz_trunk" value="9.683530508687989"/>
-	<property name="ixy_trunk" value="-0.010207938403425"/>
-	<property name="ixz_trunk" value="0.009349214202972"/>
-	<property name="iyz_trunk" value="-0.003535462679426"/>
+	<property name="m_trunk" value="39.71"/>
+	<property name="ixx_trunk" value="0.3020795"/>
+	<property name="iyy_trunk" value="4.751448"/>
+	<property name="izz_trunk" value="4.82415"/>
+	<property name="ixy_trunk" value="-0.0050854"/>
+	<property name="ixz_trunk" value=" 0.0046576"/>
+	<property name="iyz_trunk" value="-0.0017613"/>
 	
 	<!-- Hip assembly -->
 	<property name="xcom_hipassembly" value="-0.000605"/>
