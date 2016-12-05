@@ -70,7 +70,7 @@ is the world frame). For more, see http://www.ros.org/wiki/xacro -->
 		name="lh"
 		parent="trunk"
 		reflect_left="1"
-		reflect_front="-1"
+		reflect_front="1"
 		load_force_sensors="$(arg load_force_sensors)">
 		<!-- <origin xyz="-0.4435 0.097 0" rpy="${PI} ${PI/2} 0"/>  -->
 		<origin xyz="${-haa_fh/2} ${haa_lr/2} 0" rpy="${PI} ${PI/2} 0"/>
@@ -82,7 +82,7 @@ is the world frame). For more, see http://www.ros.org/wiki/xacro -->
 		name="rh"
 		parent="trunk"
 		reflect_left="-1"
-		reflect_front="-1"
+		reflect_front="1"
 		load_force_sensors="$(arg load_force_sensors)">
 		<!-- <origin xyz="-0.4435 -0.097 0" rpy="0 ${PI/2} 0"/> -->
 		<origin xyz="${-haa_fh/2} ${-haa_lr/2} 0" rpy="0 ${PI/2} 0"/>
