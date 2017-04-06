@@ -23,6 +23,7 @@
 	<xacro:include filename="$(find sensors_description)/urdfs/sensors/ptu_d46.urdf.xacro"/>
 	<xacro:include filename="$(find sensors_description)/urdfs/sensors/bumblebee.urdf.xacro"/>
 	<xacro:include filename="$(find sensors_description)/urdfs/sensors/vislab_3dve.urdf.xacro"/>
+	<xacro:include filename="$(find sensors_description)/urdfs/sensors/multisense_sl.urdf.xacro"/>
 
 	<!-- Generic simulator_gazebo plugins for starting mechanism control, ros time -->
 	<xacro:include filename="$(find hyq2max_description)/gazebo/gazebo.urdf.xacro"/>
@@ -140,5 +141,8 @@ is the world frame). For more, see http://www.ros.org/wiki/xacro -->
 		rpy="0 0 0"
 		high_res="false"/>-->
 
+        <xacro:multisense_sl parent="trunk" prefix="hyq">
+            <origin xyz="0.701737 0.0 -0.05" rpy="-0.0241345 0.446222 -0.0347202"/>
+        </xacro:multisense_sl>
 
 </robot>
