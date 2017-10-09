@@ -14,7 +14,7 @@
 		<!-- Joints -->
 		<!-- HAA joint -->
 		<joint name="${name}_haa_joint" type="revolute">
-			<insert_block name="origin"/>
+			<xacro:insert_block name="origin"/>
 			<parent link="${parent}"/>
 			<child  link="${name}_hipassembly"/>
 			<axis xyz="0 0 1"/>
