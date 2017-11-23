@@ -11,11 +11,11 @@
 
 	<!-- send HyQ2Max urdf to param server -->
 	<group if="$(arg arm)">
-		<param name="robot_description" command="$(find xacro)/xacro.py '$(find hyq2max_description)/robots/hyq2max_with_arms.urdf.xacro' load_force_sensors:=$(arg internal_wrench)"/>
+		<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find hyq2max_description)/robots/hyq2max_with_arms.urdf.xacro' load_force_sensors:=$(arg internal_wrench)"/>
 	</group>
 	<group unless="$(arg arm)">
-		<param name="robot_description" command="$(find xacro)/xacro.py '$(find hyq2max_description)/robots/hyq2max.urdf.xacro' load_force_sensors:=$(arg internal_wrench)"/>
-		<param name="hyq2max/robot_model" command="$(find xacro)/xacro.py '$(find hyq2max_description)/robots/hyq2max_model.urdf.xacro'"/>
+		<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find hyq2max_description)/robots/hyq2max.urdf.xacro' load_force_sensors:=$(arg internal_wrench)"/>
+		<param name="hyq2max/robot_model" command="$(find xacro)/xacro --inorder '$(find hyq2max_description)/robots/hyq2max_model.urdf.xacro'"/>
 	</group>
 
 </launch>
